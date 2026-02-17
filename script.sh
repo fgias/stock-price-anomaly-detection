@@ -4,5 +4,5 @@ mamba run -n stgan \
     --dataset crypto \
     --lambda_G 1 \
     --trend_time 7 \
-    --epoch 10 \
-    > crypto/result/training.log 2>&1
+    --epoch 20 \
+    2>&1 | tee crypto/result/training.log
