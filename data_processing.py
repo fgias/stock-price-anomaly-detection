@@ -41,7 +41,7 @@ def download_data(ticker: str, start: str, end: str, save: bool = False) -> pd.D
     df.columns.name = None
     df["Ticker"] = ticker
     path = resolve_path(f"data/{ticker}.csv", create_dirs=True)
-    cols = ["Date", "Open", "High", "Low", "Close", "Adj Close", "Volume"]
+    cols = ["Date", "Adj Close"]
     df = df[cols]
     if save:
         df.to_csv(path, index=False)
