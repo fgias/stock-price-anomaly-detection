@@ -1,6 +1,6 @@
-# traffic-anomaly-detection
+# Stock Price Anomaly Detection
 
-Link prediction and anomaly detection for traffic networks.
+Anomaly detection for stock prices.
 
 ## Plan
 
