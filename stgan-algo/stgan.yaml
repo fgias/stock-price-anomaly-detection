@@ -18,3 +18,4 @@ dependencies:
 - pytorch=2.1.2
 - torchvision # for sigmoid focal loss
 - tqdm
+- yfinance
