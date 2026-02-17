@@ -4,3 +4,4 @@ weather_data
 *.err
 *.out
 __pycache__/
+data/
