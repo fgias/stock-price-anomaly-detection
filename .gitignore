@@ -1,0 +1,5 @@
+.DS_Store
+traffic_data
+weather_data
+*.err
+*.out
