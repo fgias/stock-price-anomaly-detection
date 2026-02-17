@@ -4,7 +4,7 @@ import yfinance as yf
 from pathlib import Path
 
 # Project root
-PROJECT_ROOT = Path(__file__)
+PROJECT_ROOT = Path(__file__).parent
 
 
 def resolve_path(file_path: str, create_dirs: bool = False) -> Path:
