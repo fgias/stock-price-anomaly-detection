@@ -2,7 +2,6 @@ name: stgan
 
 channels:
 - rapidsai
-- nvidia
 - pytorch
 - pyg
 - conda-forge
@@ -17,9 +16,5 @@ dependencies:
 - pandas # dataframes
 - matplotlib # plotting
 - pytorch=2.1.2
-- pytorch-cuda==11.8 # CUDA for PyTorch
 - torchvision # for sigmoid focal loss
-- cudatoolkit==11.8 # CUDA for the RAPIDS packages and for faiss
-- cupy # GPU matrix operations
-- cudf=23.12 # GPU dataframes
 - tqdm
