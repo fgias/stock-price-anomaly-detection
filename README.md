@@ -8,21 +8,21 @@ Anomaly detection for stock prices.
 
 ## Instructions
 
-- Install mamba/miniforge3.
+- Install mamba/miniforge3:
 
 ```
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
 
-- Install dependencies.
+- Install dependencies:
 
 ```
 mamba env create -f env.yaml
 ```
 
-- Activate environment.
+- Run training:
 
 ```
-mamba activate env
+bash script.sh
 ```
