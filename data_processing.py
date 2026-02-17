@@ -17,31 +17,25 @@ def resolve_path(file_path: str, create_dirs: bool = False) -> Path:
     return path
 
 
-def download_data(ticker: str, start: str, end: str, save: bool = False) -> pd.DataFrame:
+def download_data(ticker: str, period: str, interval: str, save: bool = False) -> pd.DataFrame:
     """
     Download data from yahoo finance and return them, optionally save them to csv
-
-    :param ticker: Asset ticker (e.g. 'AAPL')
-    :type ticker: str
-    :param start: Start date in 'YYYY-MM-DD' format
-    :type start: str
-    :param end: End date in 'YYYY-MM-DD' format
-    :type end: str
-    :param save: Optionally save data to csv (default False)
-    :type save: bool (optional)
-
-    :return: Daily adjusted close prices indexed by date
-    :rtype: pd.DataFrame
     """
-    df = yf.download(ticker, start=start, end=end, progress=False, auto_adjust=False)
+    df = yf.download(
+        ticker,
+        period=period,
+        interval=interval,
+        progress=False, 
+        auto_adjust=False,
+    )
     assert len(df) > 0, "YF error"
 
-    df = df.sort_values("Date").reset_index()
+    df = df.sort_values("Datetime").reset_index()
     df.columns = df.columns.droplevel("Ticker")
     df.columns.name = None
     df["Ticker"] = ticker
     path = resolve_path(f"data/{ticker}.csv", create_dirs=True)
-    cols = ["Date", "Adj Close"]
+    cols = ["Datetime", "Adj Close"]
     df = df[cols]
     if save:
         df.to_csv(path, index=False)
