@@ -1,4 +1,4 @@
-cd stgan-algo/STGAN
+cd stgan/STGAN
 mamba run -n stgan \
     python main.py \
     --dataset crypto \
