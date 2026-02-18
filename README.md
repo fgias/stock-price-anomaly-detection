@@ -35,6 +35,33 @@ mamba env create -f env.yaml
 
 - Run training:
 
-```
-bash script.sh
-```
+
+
+## Workflow
+
+1. **Prepare data and generate dataset**
+
+    Use `crypto*data.ipynb` to download data from yahoo finance, and then preprocess them in the required format. Also, calculate any accompanying features.
+
+1. **Specify the parameters of the generated dataset**
+
+    Inside `stgan/STGAN/main.py` specify the parameters of the dataset:
+    - `opt['dataset'] == 'crypto'`
+    - `opt['timestamp'] = 1 # 1h`
+    - ...
+
+1. **Run training on the generated dataset**
+    
+    Specify configuration in `script.sh` and run training:
+
+    ```
+    bash script.sh
+    ```
+
+1. **Monitor training**
+
+    Run notebook `stgan/training/training-plot.ipynb`, specifying the correct `training.log`.
+
+1. **Check results**
+
+    Run an evaluation as done in notebook `stgan/results_crypto.ipynb`, again using the correct output data.
