@@ -1,3 +1,0 @@
-[submodule "STGAN"]
-	path = stgan/STGAN
-	url = https://github.com/fgias/STGAN
