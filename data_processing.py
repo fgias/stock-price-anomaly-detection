@@ -17,7 +17,7 @@ def resolve_path(file_path: str, create_dirs: bool = False) -> Path:
     return path
 
 
-def download_data(ticker: str, period: str, interval: str, save: bool = False) -> pd.DataFrame:
+def download_data(ticker: str, cols: list[str], period: str, interval: str, save: bool = False) -> pd.DataFrame:
     """
     Download data from yahoo finance and return them, optionally save them to csv
     """
@@ -35,7 +35,6 @@ def download_data(ticker: str, period: str, interval: str, save: bool = False) -
     df.columns.name = None
     df["Ticker"] = ticker
     path = resolve_path(f"data/{ticker}.csv", create_dirs=True)
-    cols = ["Datetime", "Open", "High", "Low", "Close", "Adj Close", "Volume"]
     df = df[cols]
     if save:
         df.to_csv(path, index=False)
