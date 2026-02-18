@@ -6,6 +6,18 @@ Anomaly detection for stock prices.
 
 - Use [STGAN](https://ieeexplore.ieee.org/document/9669110), [repository](https://github.com/dleyan/STGAN), my [fork](https://github.com/fgias/STGAN).
 
+## Folder structure
+
+```
+STGAN/
+    - <dataset>/
+        - data/
+            - data.npy
+            - ...
+        - checkpoint/
+        - result/
+```
+
 ## Instructions
 
 - Install mamba/miniforge3:
