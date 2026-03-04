@@ -66,4 +66,4 @@ mamba env create -f env.yaml
 
 1. **Check results**
 
-    Run an evaluation as done in notebook `stgan/results_crypto.ipynb`, again using the correct output data.
+    `...`
